@@ -54,3 +54,18 @@ going_modular/
             ├── steak/
             └── sushi/
 ```
+
+# Use Python's argparse module to be able to send the train.py custom hyperparameter values for training procedures.
+ * Add an argument flag for using a different:
+    * Training/testing directory
+    * Learning rate
+    * Batch size
+    * Number of epochs to train for 
+    * Number of hidden units in the TinyVGG model
+      * Keep the default values for each of the above arguments as what they already are (as in notebook 05).
+ * For example, you should be able to run something similar to the following line to train a TinyVGG model with a learning rate of 0.003 and a batch size of 64 for 20 epochs: 
+   python train.py --learning_rate 0.003 batch_size 64 num_epochs 20.
+
+  - ```
+    !python train.py --num_epochs 5 --batch_size 128 --hidden_units 128 --learning_rate 0.0003
+    ```
