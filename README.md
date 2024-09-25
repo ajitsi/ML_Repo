@@ -66,6 +66,10 @@ going_modular/
  * For example, you should be able to run something similar to the following line to train a TinyVGG model with a learning rate of 0.003 and a batch size of 64 for 20 epochs: 
    python train.py --learning_rate 0.003 batch_size 64 num_epochs 20.
 
-  - ```
+  * ```
     !python train.py --num_epochs 5 --batch_size 128 --hidden_units 128 --learning_rate 0.0003
+    ```
+    
+  * ```
+    !python predict.py --image data/pizza_steak_sushi/test/sushi/175783.jpg
     ```
