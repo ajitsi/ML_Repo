@@ -2,7 +2,11 @@
 Trains a Pytorch image classification model using device agonstic code
 """
 
-
+import os
+import torch
+import data_setup, engine, model_builder, utils
+from torchvision import transforms
+from timeit import default_timer as timer 
 
 def train_torch():
     # Setup hyperparameters
@@ -12,8 +16,8 @@ def train_torch():
     LEARNING_RATE = 0.001
 
     # Setup directories
-    train_dir = "going_modular/data/pizza_steak_sushi/train"
-    test_dir = "going_modular/data/pizza_steak_sushi/test"
+    train_dir = "./data/pizza_steak_sushi/train"
+    test_dir = "./data/pizza_steak_sushi/test"
 
     # Setup target device
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -45,7 +49,7 @@ def train_torch():
     start_time = timer()
 
     # Start training with help from engine.py
-    engine.train(model=model,
+    results = engine.train(model=model,
                     train_dataloader=train_dataloader,
                     test_dataloader=test_dataloader,
                     loss_fn=loss_fn,
@@ -55,6 +59,7 @@ def train_torch():
     # End the timer and print out how long it took
     end_time = timer()
     print(f"[INFO] Total training time: {end_time-start_time:.3f} seconds")
+    print(f"[INFO] results dict: {results}")
     # Save the model with help from utils.py
     utils.save_model(model=model,
                         target_dir="models",
@@ -63,11 +68,4 @@ def train_torch():
     
 
 if __name__ == '__main__':
-    
-    import os
-    import torch
-    import data_setup, engine, model_builder, utils
-    from torchvision import transforms
-    from timeit import default_timer as timer 
-    
     train_torch()
