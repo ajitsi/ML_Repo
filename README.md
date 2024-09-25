@@ -1,5 +1,5 @@
 The Python scripts in this directory were generated using the notebook 
-<a href="https://github.com/mrdbourke/pytorch-deep-learning/blob/main/going_modular/05_pytorch_going_modular_script_mode.ipyn">05. Going Modular Part 2 (script mode).</a>
+<a href="https://github.com/mrdbourke/pytorch-deep-learning/blob/main/going_modular/05_pytorch_going_modular_script_mode.ipynb">05. Going Modular Part 2 (script mode).</a>
 
 They breakdown as follows:
 
