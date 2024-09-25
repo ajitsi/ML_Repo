@@ -9,7 +9,7 @@ They breakdown as follows:
 - train.py - a file to leverage all other files and train a target PyTorch model.
 - utils.py - a file dedicated to helpful utility functions.
 
-# PyTorch in the wild
+# 1. PyTorch in the wild
 In your travels, you'll see many code repositories for PyTorch-based ML projects have instructions on how to run the PyTorch code in the form of Python scripts.
 
 For example, you might be instructed to run code like the following in a terminal/command line to train a model:
@@ -30,6 +30,7 @@ For example, let's say we wanted to train our TinyVGG model from notebook 04 for
 ```
 python train.py --model tinyvgg --batch_size 32 --lr 0.001 --num_epochs 10
 ```
+This results in having a file called data that contains another directory called pizza_steak_sushi with images of pizza, steak and sushi in standard image classification format.
 ```
 going_modular/
 ├── going_modular/
@@ -55,7 +56,7 @@ going_modular/
             └── sushi/
 ```
 
-# Use Python's argparse module to be able to send the train.py custom hyperparameter values for training procedures.
+# 2. Use Python's argparse module to be able to send the train.py custom hyperparameter values for training procedures.
  * Add an argument flag for using a different:
     * Training/testing directory
     * Learning rate
