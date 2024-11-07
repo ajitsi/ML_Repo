@@ -74,3 +74,6 @@ going_modular/
   * ```
     !python predict.py --image data/pizza_steak_sushi/test/sushi/175783.jpg
     ```
+## 3. Push large files (more than 100 MB) to github
+Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
+
