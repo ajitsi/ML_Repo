@@ -4,7 +4,6 @@ import os
 import torch
 
 from model import create_effnetb2_model
-
 from model import create_vit_model
 from timeit import default_timer as timer
 from typing import Tuple, Dict
@@ -40,9 +39,8 @@ vit.load_state_dict(
     torch.load(
         f = model_path,
         map_location  = torch.device("cpu")
-   )
+    )
 )
-
 
 ### 3. Predict function ###
 
@@ -54,11 +52,11 @@ def predict(img, model_choice) -> Tuple[Dict, float]:
   if model_choice == "EffNetB2":
     model = effnetb2
     transforms = effnetb2_transforms
-    prediction_label = "Predictions (EffNetB2 🍃)"
+    prediction_label = "Predictions (EffNetB2 ðŸƒ)"
   elif model_choice == "ViT":
     model = vit
     transforms = vit_transforms
-    prediction_label = "Predictions (ViT 🌞)" 
+    prediction_label = "Predictions (ViT ðŸŒž)" 
     
   else:
     raise gr.Error("Invalid model choice")
@@ -71,21 +69,6 @@ def predict(img, model_choice) -> Tuple[Dict, float]:
   with torch.inference_mode():
     # Pass the transformed image through the model and turn the prediction logits into prediction probabilities
     pred_probs = torch.softmax(model(img), dim=1)
-
-
-def predict(img) -> Tuple[Dict, float]:
-  # Start the timer
-  start_time = timer()
-
-  # Transform the target image and add a batch dimension
-  img = effnetb2_transforms(img).unsqueeze(0)
-
-  # Put model into evaluation mode and turn on inference mode
-  effnetb2.eval()
-  with torch.inference_mode():
-    # Pass the transformed image through the model and turn the prediction logits into prediction probabilities
-    pred_probs = torch.softmax(effnetb2(img), dim=1)
-
 
   # Create prediction label and prediction probability dictionary for each prediction class
   pred_labels_and_probs = {class_names[i]: float(pred_probs[0][i]) for i in range(len(class_names))}
@@ -104,7 +87,7 @@ def dynamic_predict(img, model_choice) -> Tuple[Dict, float]:
 ### 4. Gradio app ##
 
 # Create title, description and article strings
-title = "FoodVision Mini 🍕🥩🍣"
+title = "FoodVision Mini ðŸ•ðŸ¥©ðŸ£"
 description = "An EfficientNetB2 feature extractor computer vision model to classify images of food as pizza, steak or sushi."
 article = "Created at [09. PyTorch Model Deployment](https://www.learnpytorch.io/09_pytorch_model_deployment/)."
 
@@ -137,8 +120,8 @@ demo = gr.Interface(fn=dynamic_predict,
                     description=description,
                     article=article,
                     theme="compact",
-                    css=css)
+                    css=css
+                    )
 
 # Launch the demo!
 demo.launch()
-
