@@ -76,7 +76,7 @@ going_modular/
     ```
 ## 3. Push large files (more than 100 MB) to github
 Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
-- Deployed into Hugging face Gradio structure
+- Deployed into Hugging face with Gradio Structure
 
 ```
  foodvision_tiny/
