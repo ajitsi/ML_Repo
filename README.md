@@ -97,3 +97,6 @@ Where:
 * `model.py` contains the model definition as well as any transforms associated with the model.
 * `requirements.txt` contains the dependencies to run our app such as `torch`, `torchvision` and `gradio`.
 
+  ![image](https://github.com/user-attachments/assets/ee01b6fa-b2be-4898-a208-23f44e3c0b18)
+
+
