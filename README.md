@@ -76,4 +76,17 @@ going_modular/
     ```
 ## 3. Push large files (more than 100 MB) to github
 Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
+- Deployed into Hugging face Gradio structure
+
+```
+ foodvision_tiny/
+    ├── 09_pretrained_effnetb2_feature_extractor_pizza_steak_sushi_20_percent.pth
+    ├── app.py
+    ├── examples/
+    │   ├── example_1.jpg
+    │   ├── example_2.jpg
+    │   └── example_3.jpg
+    ├── model.py
+    └── requirements.txt
+```
 
