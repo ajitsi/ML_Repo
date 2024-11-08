@@ -76,8 +76,8 @@ going_modular/
     ```
 ## 3. Push large files (more than 100 MB) to github
 Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
-- Deployed into Hugging face with Gradio Structure
 
+## 4. Deployed into Hugging face with Gradio Structure
 ```
  foodvision_tiny/
     ├── 09_pretrained_effnetb2_feature_extractor_pizza_steak_sushi_20_percent.pth
@@ -89,4 +89,11 @@ Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-gith
     ├── model.py
     └── requirements.txt
 ```
+Where:
+* `09_pretrained_effnetb2_feature_extractor_pizza_steak_sushi_20_percent.pth` is our trained PyTorch model file.
+* `app.py` contains our Gradio app (similar to the code that launched the app).
+    * **Note:** `app.py` is the default filename used for Hugging Face Spaces, if you deploy your app there, Spaces will by default look for a file called `app.py` to run. This is changeable in settings.
+* `examples/` contains example images to use with our Gradio app.
+* `model.py` contains the model definition as well as any transforms associated with the model.
+* `requirements.txt` contains the dependencies to run our app such as `torch`, `torchvision` and `gradio`.
 
