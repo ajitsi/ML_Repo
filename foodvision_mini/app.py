@@ -45,7 +45,7 @@ vit.load_state_dict(
 ### 3. Predict function ###
 
 # Create predict function
-def predict(img, model_choice) -> Tuple[Dict, float]:
+def predict(img, model_choice) -> Tuple[str, Dict[str, float], float]:
   # Start the timer
   start_time = timer()
   
@@ -57,7 +57,6 @@ def predict(img, model_choice) -> Tuple[Dict, float]:
     model = vit
     transforms = vit_transforms
     prediction_label = "Predictions (ViT 🌞)" 
-    
   else:
     raise gr.Error("Invalid model choice")
    
@@ -82,13 +81,14 @@ def predict(img, model_choice) -> Tuple[Dict, float]:
 def dynamic_predict(img, model_choice) -> Tuple[Dict, float]:
   prediction_label, pred_labels_and_probs, pred_time = predict(img, model_choice)
   #prediction_label = f"Predictions ({model_choice})"
-  return gr.update(value=pred_labels_and_probs, label= prediction_label), pred_time
+  pred_label_update = gr.update(value=pred_labels_and_probs, label=prediction_label)
+  return pred_label_update, pred_time
 
 ### 4. Gradio app ##
 
 # Create title, description and article strings
 title = "FoodVision Mini 🍕🥩🍣"
-description = "An EfficientNetB2 feature extractor computer vision model to classify images of food as pizza, steak or sushi."
+description = "An EfficientNetB2 (🍃)/ViT(🌞) feature extractor computer vision model to classify images of food as pizza, steak or sushi."
 article = "Created at [09. PyTorch Model Deployment](https://www.learnpytorch.io/09_pytorch_model_deployment/)."
 
 # Create examples list from "examples/" directory
@@ -100,10 +100,6 @@ css = """
     background-color: lightpink;
     color: #333;
     font-weight: bold;
-}
-#model-choice-dropdown option[value="ViT"] {
-    background-color: blue;
-    color: white;
 }
 """
 
