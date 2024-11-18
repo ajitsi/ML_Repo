@@ -15,7 +15,7 @@ with open("class_names.txt", "r") as f: # reading them in from class_names.txt
 
 # Create model
 effnetb2, effnetb2_transforms = create_effnetb2_model(
-    num_classes=101, # could also use len(class_names)
+    num_classes=len(class_names),
 )
 
 # Load saved weights
