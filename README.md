@@ -79,7 +79,7 @@ Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-gith
 
 ## 4. Deployed into Hugging face with Gradio Structure
 ```
- foodvision_tiny/
+ foodvision_mini/
     ├── 09_pretrained_effnetb2_feature_extractor_pizza_steak_sushi_20_percent.pth
     ├── app.py
     ├── examples/
