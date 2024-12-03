@@ -78,7 +78,7 @@ going_modular/
 Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
 
 
-$${\color{Darkorange}Deployed \space into \space Hugging \space face \space with \space Gradio \space Structure}$$ Link- (https://huggingface.co/ajitsi)
+**$${\color{Darkorange} Deployed \space into \space Hugging \space face \space with \space Gradio \space Structure \space - }$$** **$${\color{orange}Link}$$** (https://huggingface.co/ajitsi)
 
 ### 4. Turning our FoodVision Mini model into a deployable app
 ```
