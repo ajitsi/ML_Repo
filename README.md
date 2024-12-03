@@ -77,7 +77,8 @@ going_modular/
 ## 3. Push large files (more than 100 MB) to github
 Links - https://git-lfs.com/, https://dev.to/iamtekson/upload-large-file-to-github-37me
 
-## 4. Deployed into Hugging face with Gradio Structure
+## Deployed into Hugging face with Gradio Structure (https://huggingface.co/ajitsi)
+### 4. Turning our FoodVision Mini model into a deployable app
 ```
  foodvision_mini/
     ├── 09_pretrained_effnetb2_feature_extractor_pizza_steak_sushi_20_percent.pth
@@ -96,7 +97,43 @@ Where:
 * `examples/` contains example images to use with our Gradio app.
 * `model.py` contains the model definition as well as any transforms associated with the model.
 * `requirements.txt` contains the dependencies to run our app such as `torch`, `torchvision` and `gradio`.
-
+  
+  ![image](https://github.com/user-attachments/assets/e31f5c49-831d-427f-bcc3-636c2d3cda70)
   ![image](https://github.com/user-attachments/assets/ee01b6fa-b2be-4898-a208-23f44e3c0b18)
+
+### 5. Turning our FoodVision Big model into a deployable app
+
+We've got a trained and saved EffNetB2 model on 20% of the Food101 dataset.
+
+And instead of letting our model live in a folder all its life, let's deploy it!
+
+We'll deploy our FoodVision Big model in the same way we deployed our FoodVision Mini model, as a Gradio demo on Hugging Face Spaces.
+
+To begin, let's create a `demos/foodvision_big/` directory to store our FoodVision Big demo files as well as a `demos/foodvision_big/examples` directory to hold an example image to test the demo with.
+
+When we're finished we'll have the following file structure:
+
+```
+demos/
+  foodvision_big/
+    09_pretrained_effnetb2_feature_extractor_food101_20_percent.pth
+    app.py
+    class_names.txt
+    examples/
+      example_1.jpg
+    model.py
+    requirements.txt
+```
+
+Where:
+* `09_pretrained_effnetb2_feature_extractor_food101_20_percent.pth` is our trained PyTorch model file.
+* `app.py` contains our FoodVision Big Gradio app.
+* `class_names.txt` contains all of the class names for FoodVision Big.
+* `examples/` contains example images to use with our Gradio app.
+* `model.py` contains the model definition as well as any transforms associated with the model.
+* `requirements.txt` contains the dependencies to run our app such as `torch`, `torchvision` and `gradio`.
+
+  ![image](https://github.com/user-attachments/assets/16f90c7d-08d9-4dbe-942f-95ef0dc11859)
+
 
 
