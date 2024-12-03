@@ -62,6 +62,7 @@ article = "Created at [09. PyTorch Model Deployment](https://www.learnpytorch.io
 
 # Create examples list from "examples/" directory
 example_list = [["examples/" + example] for example in os.listdir("examples")]
+print(f"Example list: {example_list}")
 
 # Create Gradio interface 
 demo = gr.Interface(
