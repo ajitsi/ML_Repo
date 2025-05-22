@@ -39,13 +39,23 @@ The colorization model is a convolutional neural network (CNN) inspired by the [
 
 ### Model Architecture Diagram
 
-```mermaid
-graph TD
-    A[Input Grayscale Image (L)] --> B[Preprocessing]
-    B --> C[ColorizationNet (CNN)]
-    C --> D[Output ab Channels]
-    D --> E[Postprocessing & Merge with L]
-    E --> F[Colorized RGB Image]
+```
+[Input Grayscale Image (L)]
+            |
+            v
+     [Preprocessing]
+            |
+            v
+   [ColorizationNet (CNN)]
+            |
+            v
+    [Output ab Channels]
+            |
+            v
+[Postprocessing & Merge with L]
+            |
+            v
+   [Colorized RGB Image]
 ```
 
 ---
