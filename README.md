@@ -137,5 +137,112 @@ Where:
 
   ![image](https://github.com/user-attachments/assets/16f90c7d-08d9-4dbe-942f-95ef0dc11859)
 
+### 6. Autocolorization of gray scale images using deep CNN
+This project is a **Streamlit web application** for automatic colorization of grayscale images using a deep learning model. The app allows users to upload a grayscale image and view its colorized version side-by-side, leveraging a PyTorch-based neural network.
 
+---
+
+## 🚀 Features
+
+- Upload grayscale images (`.jpg`, `.jpeg`, `.png`)
+- View original and colorized images side-by-side
+- Simple, responsive UI built with Streamlit
+- Modular code structure for easy extension
+
+---
+
+## 🏗️ Folder Structure
+
+```
+image_colorization_app/
+│
+├── app/
+│   ├── __init__.py
+│   ├── streamlit_app.py         # Main Streamlit UI
+│   ├── inference.py             # Model loading & inference logic
+│   └── model/
+│       ├── __init__.py
+│       ├── colorization_model.py # Model architecture (PyTorch)
+│       └── colorization_model.pth # Trained model weights
+│
+├── requirements.txt             # Python dependencies
+└── README.md                    # Project documentation
+```
+
+---
+
+## 🧠 Model Overview
+
+The colorization model is a convolutional neural network (CNN) inspired by the [“Colorful Image Colorization”](https://arxiv.org/abs/1603.08511) paper. It takes a single-channel (L) grayscale image and predicts the two color channels (a, b) in the LAB color space.
+
+### Model Architecture Diagram
+
+```
+[Input Grayscale Image (L)]
+            |
+            v
+     [Preprocessing]
+            |
+            v
+   [ColorizationNet (CNN)]
+            |
+            v
+    [Output ab Channels]
+            |
+            v
+[Postprocessing & Merge with L]
+            |
+            v
+   [Colorized RGB Image]
+```
+
+---
+
+## 🏋️ Model Training (Summary)
+
+1. **Dataset:**  
+   Use a dataset like [ImageNet](http://www.image-net.org/) or [COCO](https://cocodataset.org/) with color images.
+
+2. **Preprocessing:**  
+   - Convert images to LAB color space.
+   - Use the L channel as input, ab channels as targets.
+
+3. **Training Loop:**  
+   - Model: Custom CNN (`ColorizationNet`)
+   - Loss: MSE or cross-entropy on ab channels
+   - Optimizer: Adam or SGD
+
+4. **Saving Weights:**  
+   - Save the trained model as `colorization_model.pth` in `app/model/`.
+
+## 🖥️ Streamlit App Flow
+
+![image](https://github.com/user-attachments/assets/c725de3f-551b-45ed-acae-da8358a2fba9)
+
+---
+## 🛠️ How to Run Locally
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/image_colorization_app.git
+   cd image_colorization_app
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. **Ensure model weights are present:**
+   - Place `colorization_model.pth` in `app/model/`.
+
+4. **Run the Streamlit app:**
+   ```sh
+   streamlit run app/streamlit_app.py
+   ```
+
+5. **Open your browser:**  
+   Visit [http://localhost:8501](http://localhost:8501)
+
+---
 
