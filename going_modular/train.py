@@ -44,7 +44,6 @@ def train_torch():
     loss_fn = torch.nn.CrossEntropyLoss()
     optimizer= torch.optim.Adam(model.parameters(),
                                 lr=LEARNING_RATE)
-    
     # Start the timer
     start_time = timer()
 

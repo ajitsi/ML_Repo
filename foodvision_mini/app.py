@@ -106,6 +106,7 @@ css = """
 # Create model choice
 model_choice = gr.Dropdown(choices=["EffNetB2", "ViT"], label="Choose Model", elem_id="model-choice-dropdown")
 
+
 # Create the Gradio demo
 demo = gr.Interface(fn=dynamic_predict,
                     inputs=[gr.Image(type="pil"), model_choice],

@@ -17,6 +17,8 @@ parser.add_argument("--model_path",
                     type=str,
                     help="target model to use for prediction filepath")
 
+
+
 args = parser.parse_args()
 
 # Setup class names
